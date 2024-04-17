@@ -1,10 +1,13 @@
 package com.leafy.core.model.greenhouse;
 
 public class Actuator {
-    private int greenhouseId;
+    private Integer greenhouseId;
     private ActuatorName name;
-    private boolean state;
+    private ActuatorState state;
 
+    private boolean turnOn() {return false;}
+
+    private boolean turnOff() {return false;}
 
 
 
