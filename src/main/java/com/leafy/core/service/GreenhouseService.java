@@ -2,20 +2,18 @@ package com.leafy.core.service;
 
 import com.leafy.core.model.greenhouse.Greenhouse;
 import com.leafy.core.repository.GreenhouseRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Service
 public class GreenhouseService {
-    private Map<Integer, Greenhouse> greenhouses;
+    private final Map<Integer, Greenhouse> greenhouses;
     private final GreenhouseRepository repository;
     public GreenhouseService(GreenhouseRepository repository) {
-
         this.repository = repository;
         this.greenhouses = new HashMap<>();
-        for (Greenhouse gh : this.get()) {
-            this.greenhouses.put(gh.getId(), gh);
-        }
 
     }
 
