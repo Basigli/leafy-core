@@ -1,7 +1,7 @@
 package com.leafy.core.model.greenhouse;
 
 public class Actuator {
-    private Integer greenhouseId;
+    private Integer arduinoId;
     private ActuatorName name;
     private ActuatorState state;
 
