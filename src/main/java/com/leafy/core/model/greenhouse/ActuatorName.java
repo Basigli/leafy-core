@@ -5,13 +5,13 @@ public enum ActuatorName {
     UV_LIGHT("UVLight"),
     VENTILATION("Ventilation");
 
-    private final String payloadName;
+    private final String payloadValue;
 
-    public String getPayloadName() {
-        return payloadName;
+    public String getPayloadValue() {
+        return payloadValue;
     }
 
-    private ActuatorName(String payloadName) {
-        this.payloadName = payloadName;
+    private ActuatorName(String payloadValue) {
+        this.payloadValue = payloadValue;
     }
 }

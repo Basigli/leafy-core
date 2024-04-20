@@ -1,5 +1,7 @@
 package com.leafy.core;
 
+import com.leafy.core.model.greenhouse.Actuator;
+import com.leafy.core.model.greenhouse.ActuatorName;
 import com.leafy.core.mqtt.MqttClientFactory;
 import com.leafy.core.mqtt.MqttMessageListener;
 import com.leafy.core.mqtt.MqttPublisher;
@@ -41,8 +43,13 @@ public class MqttTest {
 
         mqttClientMock.disconnect();
         mqttClientMock.close();
-
-
-
     }
+
+    @Test
+    public void testActuator() throws Exception {
+        Actuator irrigationPump = new Actuator(ActuatorName.IRRIGATION, "PVHBE");
+        irrigationPump.turnOn();
+        irrigationPump.turnOff();
+    }
+
 }

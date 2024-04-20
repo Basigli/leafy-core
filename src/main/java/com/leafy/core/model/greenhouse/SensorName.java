@@ -6,13 +6,13 @@ public enum SensorName {
     IS_TANK_EMPTY("IsTankEmpty"),
     LIGHT_QUANTITY("LightQuantity"),
     TERRAIN_HUM("TerrainHumidity");
-    private final String payloadName;
+    private final String payloadValue;
 
-    public String getPayloadName() {
-        return payloadName;
+    public String getPayloadValue() {
+        return payloadValue;
     }
 
-    private SensorName(String payloadName) {
-        this.payloadName = payloadName;
+    private SensorName(String payloadValue) {
+        this.payloadValue = payloadValue;
     }
 }

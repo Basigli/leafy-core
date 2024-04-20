@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.concurrent.CountDownLatch;
 
-@Component
+//@Component
 public class MqttMessageListener implements MqttCallback {
 
     private final CountDownLatch latch;

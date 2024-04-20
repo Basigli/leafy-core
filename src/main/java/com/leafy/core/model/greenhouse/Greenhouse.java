@@ -1,5 +1,7 @@
 package com.leafy.core.model.greenhouse;
 
+import com.leafy.core.model.preset.Preset;
+
 import java.util.List;
 
 public class Greenhouse implements IGreenhouse {
@@ -11,8 +13,9 @@ public class Greenhouse implements IGreenhouse {
     //private Preset preset;
     private List<Sensor> sensors;
     private List<Actuator> actuators;
+    private Preset preset;
 
-
+    // region Get/Set
     public Integer getId() {
         return id;
     }
@@ -52,4 +55,11 @@ public class Greenhouse implements IGreenhouse {
     public void setGrowthStage(Integer growthStage) {
         this.growthStage = growthStage;
     }
+    // endregion
+
+    private boolean autoMode() {
+        return false;
+    }
+
+
 }
