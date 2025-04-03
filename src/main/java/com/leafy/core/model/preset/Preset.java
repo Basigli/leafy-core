@@ -1,4 +1,4 @@
 package com.leafy.core.model.preset;
 
-public class Preset {
+public class Preset implements IPreset {
 }

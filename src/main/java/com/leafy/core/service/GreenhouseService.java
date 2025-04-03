@@ -14,7 +14,6 @@ public class GreenhouseService {
     public GreenhouseService(GreenhouseRepository repository) {
         this.repository = repository;
         this.greenhouses = new HashMap<>();
-
     }
 
     public Iterable<Greenhouse> get() {
@@ -22,10 +21,10 @@ public class GreenhouseService {
     }
 
 
-    public Greenhouse get(Integer id) {
+    public Greenhouse get(Integer greenhouseId) {
         Greenhouse greenhouse = null;
         // search in cache for the greenhouse, if not found ask the database
-        greenhouse = greenhouses.getOrDefault(id, repository.findById(id).orElse(null));
+        greenhouse = greenhouses.getOrDefault(greenhouseId, repository.findById(greenhouseId).orElse(null));
         greenhouses.put(greenhouse.getId(), greenhouse); // update the cache
         return greenhouse;
     }

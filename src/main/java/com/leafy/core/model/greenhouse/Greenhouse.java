@@ -1,18 +1,19 @@
 package com.leafy.core.model.greenhouse;
 
+import com.leafy.core.model.greenhouse.sensors.ISensor;
+import com.leafy.core.model.greenhouse.sensors.Sensor;
 import com.leafy.core.model.preset.Preset;
 
 import java.util.List;
 
 public class Greenhouse implements IGreenhouse {
     private Integer id;
-    private String arduino_id;
+    private String arduinoId;
     private String name;
     private boolean isInAutoMode;
     private Integer growthStage;
-    //private Preset preset;
-    private List<Sensor> sensors;
-    private List<Actuator> actuators;
+    private List<ISensor> sensors;
+    private List<IActuator> actuators;
     private Preset preset;
 
     // region Get/Set
@@ -24,12 +25,12 @@ public class Greenhouse implements IGreenhouse {
         this.id = id;
     }
 
-    public String getArduino_id() {
-        return arduino_id;
+    public String getArduinoId() {
+        return arduinoId;
     }
 
-    public void setArduino_id(String arduino_id) {
-        this.arduino_id = arduino_id;
+    public void setArduinoId(String arduinoId) {
+        this.arduinoId = arduinoId;
     }
 
     public String getName() {
@@ -57,7 +58,7 @@ public class Greenhouse implements IGreenhouse {
     }
     // endregion
 
-    private boolean autoMode() {
+    public boolean autoMode() {
         return false;
     }
 
