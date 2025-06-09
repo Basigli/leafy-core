@@ -3,9 +3,9 @@ package com.leafy.core.model.greenhouse;
 import com.leafy.core.model.greenhouse.sensors.ISensor;
 import com.leafy.core.model.greenhouse.sensors.Sensor;
 import com.leafy.core.model.preset.Preset;
-
 import java.util.List;
 
+// @Table("GREENHOUSE")
 public class Greenhouse implements IGreenhouse {
     private Integer id;
     private String arduinoId;
