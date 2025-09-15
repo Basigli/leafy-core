@@ -10,10 +10,9 @@ public class ActuatorSettings {
     private SetPointsMode setPointsMode;
     private Integer lowSetPoint;
     private Integer highSetPoint;
-
     private SensorName sensorAttached;
 
-    public ActuatorSettings(ActuatorStageMode actuatorStageMode, List<Timer> timers, SetPointsMode setPointsMode, Integer lowSetPoint, Integer highSetPoint, SensorName sensorAttached) {
+    private ActuatorSettings(ActuatorStageMode actuatorStageMode, List<Timer> timers, SetPointsMode setPointsMode, Integer lowSetPoint, Integer highSetPoint, SensorName sensorAttached) {
         this.actuatorStageMode = actuatorStageMode;
         this.timers = timers;
         this.setPointsMode = setPointsMode;
@@ -22,12 +21,13 @@ public class ActuatorSettings {
         this.sensorAttached = sensorAttached;
     }
 
-    public ActuatorSettings getTemporizedSettings(List<Timer> timers) {
+
+    public static ActuatorSettings getTemporizedSettings(List<Timer> timers) {
         return new ActuatorSettings(ActuatorStageMode.TEMPORIZED, timers, null, null, null, null);
     }
 
 
-    public ActuatorSettings getSensorizedSettings(SensorName sensorAttached, Integer lowSetPoint, Integer highSetPoint) {
+    public static ActuatorSettings getSensorizedSettings(SensorName sensorAttached, Integer lowSetPoint, Integer highSetPoint) {
         SetPointsMode setPointsMode = SetPointsMode.getFromSensorName(sensorAttached);
         if (lowSetPoint >= highSetPoint) {
             return null;
@@ -37,8 +37,4 @@ public class ActuatorSettings {
         }
         return new ActuatorSettings(ActuatorStageMode.SENSORIZED, null, setPointsMode, lowSetPoint, highSetPoint, sensorAttached);
     }
-
-
-
-
 }

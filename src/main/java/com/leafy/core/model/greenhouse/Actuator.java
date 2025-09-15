@@ -73,7 +73,4 @@ public class Actuator implements IActuator {
             return false;
         }
     }
-
-
-
 }

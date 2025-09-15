@@ -4,8 +4,8 @@ import java.time.Duration;
 import java.time.LocalTime;
 
 public class Timer {
-    private LocalTime startTime;
-    private LocalTime endTime;
+    private final LocalTime startTime;
+    private final LocalTime endTime;
 
 
     private Timer(LocalTime startTime, LocalTime endTime) {
@@ -13,13 +13,17 @@ public class Timer {
         this.endTime = endTime;
     }
 
-    private Timer getTimer(LocalTime startTime, Duration duration) {
+    public static Timer getTimer(LocalTime startTime, Duration duration) {
         return new Timer(startTime, startTime.plusSeconds(duration.getSeconds()));
     }
 
-    private Timer getTimer(LocalTime startTime, LocalTime endTime) {
+    public static Timer getTimer(LocalTime startTime, LocalTime endTime) {
         if (endTime.isBefore(startTime))
             return null;
         return new Timer(startTime, endTime);
+    }
+
+    public boolean isOver() {
+        return LocalTime.now().isAfter(this.endTime);
     }
 }
