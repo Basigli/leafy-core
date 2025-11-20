@@ -20,7 +20,6 @@ public class GreenhouseService {
         return repository.findAll();
     }
 
-
     public Greenhouse get(Integer greenhouseId) {
         Greenhouse greenhouse = null;
         // search in cache for the greenhouse, if not found ask the database
@@ -33,7 +32,4 @@ public class GreenhouseService {
         repository.deleteById(id);
         greenhouses.remove(id);
     }
-
-
-
 }

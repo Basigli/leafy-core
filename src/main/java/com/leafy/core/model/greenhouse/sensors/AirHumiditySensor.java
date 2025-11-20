@@ -7,5 +7,4 @@ public class AirHumiditySensor extends Sensor {
     public Float readValue() {
         return 2F;
     }
-
 }

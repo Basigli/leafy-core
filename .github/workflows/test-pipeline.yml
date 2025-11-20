@@ -1,0 +1,10 @@
+name: Testing Workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  print-a-string:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo Hello, World!

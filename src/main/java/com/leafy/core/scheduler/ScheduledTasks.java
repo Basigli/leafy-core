@@ -14,7 +14,5 @@ public class ScheduledTasks {
     public void performTask() throws Exception {
         Actuator irrigationPump = new Actuator(ActuatorName.IRRIGATION, "PVHBE");
         irrigationPump.turnOn();
-
     }
-
 }
